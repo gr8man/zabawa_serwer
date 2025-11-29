@@ -6,7 +6,11 @@ USER root
 # Install the intl and bcmath extensions with root permissions
 RUN install-php-extensions intl bcmath
 
+# Install imagick
 RUN install-php-extensions imagick
+
+# Install exif (WordPress media needs this)
+RUN install-php-extensions exif
 
 # Drop back to our unprivileged user
 USER www-data
