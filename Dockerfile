@@ -1,4 +1,4 @@
-FROM serversideup/php:8.5-fpm-apache
+FROM serversideup/php:8.4-fpm-apache
 
 # Switch to root so we can do root things
 USER root
