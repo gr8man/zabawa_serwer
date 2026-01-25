@@ -14,7 +14,6 @@ jobs:
 
       - name: Get current date
         id: date
-        # Zmieniono format na %Y%m%d
         run: echo "date=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
 
       - name: Login to Docker Hub
@@ -26,6 +25,10 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
+          # 'context: .' mówi Dockerowi, aby szukał Dockerfile w głównym katalogu
+          context: .
+          # Opcjonalnie wskaż konkretną nazwę pliku, jeśli nie jest to "Dockerfile"
+          file: ./Dockerfile
           push: true
           tags: |
             gr8man/webserwer_production:latest
