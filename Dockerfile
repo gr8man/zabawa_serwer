@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN npm install -g n && n stable
 
 # Instalacja rozszerzeń PHP (Dodano 'gd')
-RUN install-php-extensions intl bcmath imagick exif gd
+RUN install-php-extensions intl bcmath imagick exif gd pcntl
 
 # Powrót do użytkownika www-data
 USER www-data
