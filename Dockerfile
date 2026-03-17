@@ -1,4 +1,4 @@
-FROM serversideup/php:8.4-fpm-apache
+FROM serversideup/php:8.3-fpm-apache
 
 # Przełącz na root, aby zainstalować pakiety
 USER root
