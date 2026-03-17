@@ -16,9 +16,10 @@ RUN ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm \
 RUN apt-get update && apt-get install -y --no-install-recommends \
     qpdf \
     git \
-    install-php-extensions intl bcmath imagick exif gd pcntl \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
+# Instalacja rozszerzeń PHP
+RUN install-php-extensions intl bcmath imagick exif gd pcntl
 
 USER www-data
